@@ -26,11 +26,6 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    {/* 
-      max-w-[1440px]: Constrains content width for better readability on large screens
-      mx-auto: Centers the content horizontally
-      overflow-hidden: Prevents horizontal scroll from animations/positioning
-    */}
     <main className="w-full max-w-[1440px] bg-white mx-auto overflow-hidden">
       <Header />
       <Hero />

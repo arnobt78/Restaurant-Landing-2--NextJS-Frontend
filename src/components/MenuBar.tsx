@@ -99,12 +99,6 @@ const MenuBar = () => {
         >
           {menuBar.map((item, index) => {
             return (
-              {/* 
-                Menu Card Component
-                - group: Enables group-hover pseudo-class on children
-                - shadow-2xl: Large shadow for card elevation effect
-                - max-w-[270px]: Constrains card width
-              */}
               <div
                 key={index}
                 className="max-w-[270px] bg-white shadow-2xl  mx-auto xl:mx-0 group"

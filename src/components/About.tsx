@@ -21,14 +21,6 @@ import { fadeIn } from "../../variants";
 import { Button } from "./ui/button";
 const About = () => {
   return (
-    {/* 
-      CSS Grid Layout:
-      - grid-cols-1: Single column on mobile
-      - xl:grid-cols-2: Two columns on extra-large screens
-      - gap-x-[74px]: Horizontal gap between columns
-      - items-center: Vertically centers grid items
-      - id="about": Anchor for navigation
-    */}
     <section
       className="grid grid-cols-1 xl:grid-cols-2 gap-x-[74px] p-8 md:p-12 xl:p-0 items-center"
       id="about"

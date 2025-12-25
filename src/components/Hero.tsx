@@ -26,13 +26,6 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    {/* 
-      Hero Section with Background Image
-      - bg-hero: Custom Tailwind class for hero background image
-      - relative: Positioning context for absolutely positioned children
-      - xl:h-[1098px]: Fixed height on extra-large screens
-      - id="home": Anchor for smooth scrolling navigation
-    */}
     <section
       className=" bg-hero bg-no-repeat relative xl:h-[1098px] py-40 pb-32 xl:py-0"
       id="home"

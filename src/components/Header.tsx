@@ -66,13 +66,6 @@ const Header = () => {
   }, []);
 
   return (
-    {/* 
-      Dynamic className with template literals:
-      - Conditional styling based on 'active' state
-      - fixed: Position fixed to viewport
-      - z-50: High z-index to stay above other content
-      - transition-all: Smooth transitions for all property changes
-    */}
     <header
       className={`${
         active ? " bg-black py-4 " : "bg-none py-8"
