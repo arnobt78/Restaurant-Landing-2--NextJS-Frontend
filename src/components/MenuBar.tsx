@@ -1,3 +1,20 @@
+/**
+ * MenuBar Component
+ * 
+ * Displays featured menu items in a responsive grid layout.
+ * 
+ * Features:
+ * - Responsive grid (1 col mobile, 3 col tablet, 4 col desktop)
+ * - Hover effects on menu cards (image zoom)
+ * - Animated section header
+ * - Animated menu items grid
+ * - Price display with custom styling
+ * 
+ * CSS Grid Responsive Breakpoints:
+ * - grid-cols-1: Mobile (default)
+ * - md:grid-cols-3: Tablet (medium screens)
+ * - xl:grid-cols-4: Desktop (extra-large screens)
+ */
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +24,20 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
+/**
+ * Menu Items Data
+ * 
+ * Static data array containing featured menu items.
+ * In a real application, this would typically come from:
+ * - A CMS (Content Management System)
+ * - An API endpoint
+ * - A database
+ * 
+ * Each item contains:
+ * - img: Image path (stored in public folder)
+ * - title: Menu item name
+ * - price: Formatted price string
+ */
 const menuBar = [
   {
     img: "/menu/item-1.png",
@@ -54,6 +85,11 @@ const MenuBar = () => {
             </Link>
           </div>
         </motion.div>
+        {/* 
+          Menu Items Grid
+          - Responsive grid layout with different column counts per breakpoint
+          - group class enables group-hover effects on child elements
+        */}
         <motion.div
           variants={fadeIn("up", 0.3)}
           initial="hidden"
@@ -63,10 +99,22 @@ const MenuBar = () => {
         >
           {menuBar.map((item, index) => {
             return (
+              {/* 
+                Menu Card Component
+                - group: Enables group-hover pseudo-class on children
+                - shadow-2xl: Large shadow for card elevation effect
+                - max-w-[270px]: Constrains card width
+              */}
               <div
                 key={index}
                 className="max-w-[270px] bg-white shadow-2xl  mx-auto xl:mx-0 group"
               >
+                {/* 
+                  Image Container with Hover Effect
+                  - overflow-hidden: Clips image during scale animation
+                  - group-hover:scale-110: Scales image 110% on card hover
+                  - transition-all: Smooth animation for all properties
+                */}
                 <div className="overflow-hidden">
                   <Image
                     className="group-hover:scale-110 transition-all duration-300"

@@ -1,4 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
+/**
+ * Footer Component (exported as Map)
+ * 
+ * Website footer section containing:
+ * - Logo
+ * - Blog links
+ * - New items links
+ * - Social media icons
+ * - Copyright information
+ * 
+ * Features:
+ * - Responsive grid layout
+ * - Animated entrance
+ * - Social media integration
+ * - Background image styling
+ * 
+ * Note: Component is named "Map" but functions as Footer.
+ * This might be a naming inconsistency from earlier development.
+ */
 "use client";
 import Image from "next/image";
 

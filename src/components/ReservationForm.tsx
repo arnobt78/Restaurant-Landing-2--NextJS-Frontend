@@ -1,3 +1,24 @@
+/**
+ * ReservationForm Component
+ * 
+ * A form component for booking restaurant tables.
+ * 
+ * Features:
+ * - First name and last name inputs
+ * - Date picker using react-day-picker (via Calendar component)
+ * - Person count selector using Radix UI Select
+ * - Form validation ready (can be extended)
+ * - Responsive grid layout
+ * 
+ * Libraries Used:
+ * - date-fns: Date formatting and manipulation
+ * - Radix UI: Accessible UI primitives (Popover, Select)
+ * - react-day-picker: Calendar component for date selection
+ * 
+ * State Management:
+ * - Uses useState hook to manage selected date
+ * - Date state is typed as Date | undefined for type safety
+ */
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 
@@ -28,6 +49,18 @@ import {
 import { useState } from "react";
 
 const ReservationForm = () => {
+  /**
+   * Date State Management
+   * 
+   * useState hook with TypeScript typing:
+   * - Date | undefined: Allows date or no selection
+   * - new Date(): Initializes with current date
+   * - setDate: Function to update the selected date
+   * 
+   * This state is used by the Calendar component to:
+   * - Display selected date in the button
+   * - Control which date is selected in the calendar
+   */
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <form className="flex flex-col gap-y-10">
@@ -45,7 +78,16 @@ const ReservationForm = () => {
         </div>
 
         <div className="grid  grid-cols-1 xl:grid-cols-2 gap-[30px]">
-          {/* calendar */}
+          {/* 
+            Date Picker using Popover and Calendar
+            - Popover: Radix UI component for dropdown/overlay
+            - asChild: Allows PopoverTrigger to merge with Button props
+            - format(date, "PPP"): Formats date as "January 1, 2024" (readable format)
+            - Calendar: react-day-picker component wrapped in custom UI
+            - mode="single": Allows selecting only one date
+            - onSelect={setDate}: Updates state when date is selected
+            - initialFocus: Focuses calendar on open for keyboard navigation
+          */}
           <div>
             <label> date </label>
             <Popover>
@@ -68,7 +110,13 @@ const ReservationForm = () => {
               </PopoverContent>
             </Popover>
           </div>
-          {/* select */}
+          {/* 
+            Person Count Selector
+            - Select: Radix UI accessible select component
+            - SelectGroup: Groups related options
+            - SelectItem: Individual selectable options
+            - Currently no state management (would need useState for value)
+          */}
           <div>
             <Label> person </Label>
             <Select>
